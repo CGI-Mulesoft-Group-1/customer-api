@@ -1,0 +1,1 @@
+{"main":"customer-registration-sapi.raml","name":"customer-registration-SAPI-POST","description":null,"classifier":"raml","tags":[],"projectId":"4fa3e024-a047-48c9-8dc3-18b6c6dc2126","dependencies":[{"groupId":"49473852-fac9-47f0-9dd5-e373d6b2591d","assetId":"customer-fragment","version":"1.0.4"}]}

@@ -1,0 +1,31 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  contactType:
+    type: string
+    enum:
+      - "mobile"
+      - "email"
+    required: true
+    example: "mobile"
+  countryCode:
+    type: string
+    enum:
+      - "+91"
+      - "+1"
+    required: false
+    example: "+91"
+  mobile:
+    type: string
+    required: false
+    example: "7647678765"
+  email:
+    type: string
+    required: false
+    example: "kumar@gmail.com"
+  
+  message:
+    type: string
+    required: true
+    example: "Hi Ravi, You have successfully register to our application, \n Your Username : 'username123' and password : 'pass123'"
