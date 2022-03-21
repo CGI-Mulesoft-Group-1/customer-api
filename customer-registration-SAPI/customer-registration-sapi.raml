@@ -9,104 +9,151 @@ types:
   requestDataType: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/dataTypes/requestDataType.raml
 
 /customers:
-  get:
-    responses:
-      200:
-        body:
-          application/json:
-            type: object
-            example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/requestExample.json
-      400:
-        body:
-          application/json:
-            type: object
-            example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/notificationFailureExample.json
-  post:
-    description: Registration of new Customer
-    is:
-      - headerCustomer
-    body:
-      application/json:
-        properties:  
-          customerRegistrationRequest:
-            type: requestDataType
-        example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/requestExample.json
-    responses:
-      200:
-        body:
-          application/json:
-            type: object
-            properties:
-              customerRegistrationResponse:
-                type: object
-                properties:
-                  eventInstanceId:
-                    type: string
-                    required: true
-                    example: "dsfhdbfhsbdfhjsb3784t2wfsd"
-                  status:
-                    type: string
-                    required : true
-                    example: "success"
-            example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/responseSuccessExample.json
-      400:
-        body:
-          application/json:
-            type: object
-            properties:
-              customerRegistrationResponse:
-                type: object
-                properties:
-                  eventInstanceId:
-                    type: string
-                    required: true
-                    example: "dsfhdbfhsbdfhjsb3784t2wfsd"
-                  status:
-                    type: string
-                    required : true
-                    example: "failure"
-            example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/responseFailureExample.json
-  put:
-    is:
-      - headerCustomer
-    body:
-      application/json:
-        properties:
-          customerRegistrationRequest:
-            type: requestDataType
-        example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/requestExample.json
-    responses:
-      200:
-        body:
-          application/json:
-            type: object
-            properties:
-              customerRegistrationResponse:
-                type: object
-                properties:
-                  eventInstanceId:
-                    type: string
-                    required: true
-                    example: "dsfhdbfhsbdfhjsb3784t2wfsd"
-                  status:
-                    type: string
-                    required : true
-                    example: "success"
-            example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/responseSuccessExample.json
-      400:
-        body:
-          application/json:
-            type: object
-            properties:
-              customerRegistrationResponse:
-                type: object
-                properties:
-                  eventInstanceId:
-                    type: string
-                    required: true
-                    example: "dsfhdbfhsbdfhjsb3784t2wfsd"
-                  status:
-                    type: string
-                    required : true
-                    example: "failure"
-            example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/responseFailureExample.json
+  /registration:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: array
+              example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/requestExample.json
+        400:
+          body:
+            application/json:
+              type: object
+              example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/notificationFailureExample.json
+    post:
+      description: Registration of new Customer
+      is:
+        - headerCustomer
+      body:
+        application/json:
+          properties:  
+            customerRegistrationRequest:
+              type: requestDataType
+          example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/requestExample.json
+      responses:
+        200:
+          body:
+            application/json:
+              type: object
+              properties:
+                customerRegistrationResponse:
+                  type: object
+                  properties:
+                    eventInstanceId:
+                      type: string
+                      required: true
+                      example: "dsfhdbfhsbdfhjsb3784t2wfsd"
+                    status:
+                      type: string
+                      required : true
+                      example: "success"
+              example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/responseSuccessExample.json
+        400:
+          body:
+            application/json:
+              type: object
+              properties:
+                customerRegistrationResponse:
+                  type: object
+                  properties:
+                    eventInstanceId:
+                      type: string
+                      required: true
+                      example: "dsfhdbfhsbdfhjsb3784t2wfsd"
+                    status:
+                      type: string
+                      required : true
+                      example: "failure"
+              example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/responseFailureExample.json
+    put:
+      is:
+        - headerCustomer
+      body:
+        application/json:
+          properties:
+            customerRegistrationRequest:
+              type: requestDataType
+          example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/requestExample.json
+      responses:
+        200:
+          body:
+            application/json:
+              type: object
+              properties:
+                customerRegistrationResponse:
+                  type: object
+                  properties:
+                    eventInstanceId:
+                      type: string
+                      required: true
+                      example: "dsfhdbfhsbdfhjsb3784t2wfsd"
+                    status:
+                      type: string
+                      required : true
+                      example: "success"
+              example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/responseSuccessExample.json
+        400:
+          body:
+            application/json:
+              type: object
+              properties:
+                customerRegistrationResponse:
+                  type: object
+                  properties:
+                    eventInstanceId:
+                      type: string
+                      required: true
+                      example: "dsfhdbfhsbdfhjsb3784t2wfsd"
+                    status:
+                      type: string
+                      required : true
+                      example: "failure"
+              example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/responseFailureExample.json
+  /notification:
+    post:
+      description:   
+      is:
+        - headerCustomer
+      body:
+        application/json:
+          properties:
+            customerNotificationRequest:
+              type: requestDataType
+          example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/notificationExample.json
+      responses:
+        200:
+          body:
+            application/json:
+              type: object
+              properties:
+                customerNotificationResponse:
+                  type: object
+                  properties:
+                    eventInstanceId:
+                      type: string
+                      required: true
+                      example: "dsfhdbfhsbdfhjsb3784t2wfsd"
+                    status:
+                      type: string
+                      required : true
+                      example: "success"
+              example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/notificationSuccessExample.json
+        400:
+          body:
+            application/json:
+              type: object
+              properties:
+                customerNotificationResponse:
+                  type: object
+                  properties:
+                    eventInstanceId:
+                      type: string
+                      required: true
+                      example: "dsfhdbfhsbdfhjsb3784t2wfsd"
+                    status:
+                      type: string
+                      required : true
+                      example: "failure"
+              example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/notificationFailureExample.json
