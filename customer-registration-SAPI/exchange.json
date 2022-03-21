@@ -1,1 +1,1 @@
-{"main":"customer-registration-sapi-put.raml","name":"customer-registration-SAPI-PUT","classifier":"raml","tags":[],"dependencies":[{"groupId":"49473852-fac9-47f0-9dd5-e373d6b2591d","assetId":"customer-fragment","version":"1.0.4"}]}
+{"main":"customer-registration-sapi.raml","name":"customer-registration-SAPI-PUT","classifier":"raml","tags":[],"dependencies":[{"groupId":"49473852-fac9-47f0-9dd5-e373d6b2591d","assetId":"customer-fragment","version":"1.0.4"}]}
