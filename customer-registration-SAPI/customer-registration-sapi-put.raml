@@ -1,6 +1,6 @@
 #%RAML 1.0
 title: customer-registration-SAPI-PUT
-description: Update all informations about customer or register a new one
+description: Customer System API
 
 traits:
   headerCustomer: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/traits/customerHeaderTrait.raml
@@ -15,7 +15,7 @@ types:
         body:
           application/json:
             type: object
-            example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/notificationExample.json
+            example: !include /exchange_modules/49473852-fac9-47f0-9dd5-e373d6b2591d/customer-fragment/1.0.4/examples/requestExample.json
       400:
         body:
           application/json:
