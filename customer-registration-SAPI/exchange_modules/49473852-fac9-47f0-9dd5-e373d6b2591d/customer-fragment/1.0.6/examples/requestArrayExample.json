@@ -1,0 +1,11 @@
+[
+  {
+  "customerRegistrationRequest": {
+    "contactType": "mobile",
+    "countryCode": "+91",
+    "mobile": "7647678765",
+    "email": "kumar@gmail.com",
+    "message": "Hi Ravi , You have successfully register to our application , Your Username : username123 and password : pass123"
+  }
+}
+]
